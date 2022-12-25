@@ -6,12 +6,17 @@
 
 .header {
   padding: 10px 0;
+  margin-bottom: 30px;
   box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .logo {
+    transform: translateX(-35px);
   }
 }
 
@@ -47,13 +52,17 @@
 .user-nav {
   display: flex;
 
-  &__link {
+  &__link-img {
     position: relative;
     border-radius: 50%;
-    transition: box-shadow .3s;
+    transition: box-shadow .3s, fill .3s;
+    width: 35px;
+    height: 35px;
+    fill: $title;
 
     &:hover {
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 0px 10px $accent;
+      fill: $accent;
     }
   }
 
@@ -211,19 +220,11 @@
 }
 
 .top-slider {
-  background-image: url('../images/top-slider-bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: $bg;
-  padding: 65px 0 45px;
 
-  &__container {
-    max-width: 1560px;
-  }
+  margin-bottom: 30px;
 
-  &__content {
-    padding-left: 175px;
-    padding-top: 125px;
+  &__img {
+    width: 100%;
   }
 
   &__item {
@@ -231,29 +232,10 @@
     justify-content: space-between;
   }
 
-  &__title {
-    max-width: 670px;
-    font-family: 'Roboto';
-    font-weight: 700;
-    font-size: 58px;
-    line-height: 68px;
-    color: $title;
-    margin-bottom: 35px;
-  }
-
-  &__text {
-    max-width: 470px;
-    margin-bottom: 55px;
-  }
-
-  &__link {
-    @extend %btn;
-  }
-
   .slick-dots {
     display: flex;
     justify-content: center;
-    margin-top: -70px;
+    margin-top: -30px;
 
     li {
       margin: 0 5px;
@@ -262,36 +244,37 @@
       button {
         padding: 0;
         font-size: 0;
-        background-color: transparent;
-        width: 26px;
-        height: 26px;
-        border: 1px solid transparent;
+        background-color: $bg;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         position: relative;
-
-        &::before {
-          content: "";
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background-color: $default;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          position: absolute;
-        }
+        cursor: pointer;
       }
 
       &.slick-active {
         button {
-          border-color: $accent;
-
-          &::before {
-            background-color: $accent;
-          }
+          background-color: white;
+          box-shadow: 0px 0px 10px #199817;
         }
       }
     }
+  }
+}
+
+.hits {
+
+  &__title {
+    font-family: 'Bodoni MT';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: $title;
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
   }
 }
 
