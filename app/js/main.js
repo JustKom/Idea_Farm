@@ -9,15 +9,14 @@ $(function () {
   });
 
   $('.new-slider__inner').slick({
-    centerMode: true,
-    // centerPadding: '60px',
-    slidesToShow: 4,
-    slidesToScroll: 1,
     arrows: false,
-    fade: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    slidesToShow: 5,
     infinite: true,
+    speed: 5000,
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToScroll: 3,
+    autoplay: true
   });
 
 });
