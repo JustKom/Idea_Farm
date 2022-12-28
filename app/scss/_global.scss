@@ -3,6 +3,8 @@ body {
   height: 100%;
 }
 
+
+
 body {
   color: $title;
   font-size: 16px;
@@ -45,4 +47,8 @@ button {
   display: block;
   text-align: center;
   margin-bottom: 25px;
+}
+
+.sr-only {
+  display: none;
 }
