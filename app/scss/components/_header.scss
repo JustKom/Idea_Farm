@@ -46,11 +46,11 @@
     &:active {
       color: $title;
     }
-  }
 
-  &__list-link--active {
-    color: $accent;
-    border-color: $accent;
+    &.selected {
+      color: $accent;
+      border-color: $accent;
+    }
   }
 }
 

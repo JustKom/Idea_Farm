@@ -16,4 +16,49 @@
 
 @import "./components/_footer.scss";
 
+.catalog {
+  &__inner-top {
+    column-count: 3;
+    column-gap: 22px;
+    max-height: 100%;
+  }
+
+  &__inner-bottom {
+    
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    position: relative;
+    margin-bottom: 22px;
+    transition: box-shadow .3s;
+    display: block;
+  }
+
+  .block {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(217, 217, 217, 0.5);
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    transition: background-color .3s;
+  }
+
+  &__name-product {
+    color: $title;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 23px;
+    text-transform: uppercase;
+  }
+}
+
 @import 'media';

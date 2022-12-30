@@ -1,0 +1,118 @@
+@include('components/_head.html', {
+'title': 'Idea Farm | Shop Page',
+})
+
+@include('components/_header.html', {
+'page': 'shop'
+})
+
+<main class="main">
+
+  @include('components/_top-slider.html')
+
+  <section class="catalog">
+    <div class="container">
+      <h1 class="title">categories</h1>
+      <div class="catalog__inner-top">
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/alkoholivab.jpg" alt="photo of shrub">
+            <div class="block">
+              <h2 class="catalog__name-product">Non-alcoholic products</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/vinegars.jpg" alt="photo of vinegars">
+            <div class="block">
+              <h2 class="catalog__name-product">VINEGARS</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/klarett.jpg" alt="photo of wine">
+            <div class="block klarett-block">
+              <h2 class="catalog__name-product">Fruit and Berry wines</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/siirup.jpg" alt="photo of sirup">
+            <div class="block">
+              <h2 class="catalog__name-product">SYRUPS</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/50.jpg" alt="photo of vinegar">
+            <div class="block">
+              <h2 class="catalog__name-product">50 SPICY SHADES</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="catalog__inner-bottom">
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/sauces.jpg" alt="photo of sauces">
+            <div class="block">
+              <h2 class="catalog__name-product">SAUCES</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/jams.jpg" alt="photo of jam">
+            <div class="block">
+              <h2 class="catalog__name-product">jams</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/coffee.jpg" alt="photo of tea">
+            <div class="block">
+              <h2 class="catalog__name-product">COFFEE AND TEA</h2>
+            </div>
+          </a>
+        </div>
+
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/digust.jpg" alt="photo of digustation">
+            <div class="block">
+              <h2 class="catalog__name-product">HIDE</h2>
+            </div>
+          </a>
+        </div>
+        
+        <div class="catalog__item">
+          <a class="catalog__link" href="#">
+            <img class="catalog__image" src="../images/categories/chocolates.jpg" alt="photo of chocolate">
+            <div class="block">
+              <h2 class="catalog__name-product">CHOCOLATES</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @include('components/_video.html')
+
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')
