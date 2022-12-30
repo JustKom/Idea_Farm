@@ -1,11 +1,12 @@
 const { src, dest, gulp, watch, parallel, series } = require('gulp');
-const scss         = require('gulp-sass')(require('sass'));
-const concat       = require('gulp-concat');
-const autoprefixer = require('gulp-autoprefixer');
-const uglify       = require('gulp-uglify');
-const del          = require('del');
-const imagemin     = require('gulp-imagemin');
-const browserSync  = require('browser-sync').create();
+const scss           = require('gulp-sass')(require('sass'));
+const concat         = require('gulp-concat');
+const autoprefixer   = require('gulp-autoprefixer');
+const uglify         = require('gulp-uglify');
+const del            = require('del');
+const imagemin       = require('gulp-imagemin');
+const fileInclude    = require('gulp-file-include');
+const browserSync    = require('browser-sync').create();
 
 
 function browsersync() {
@@ -16,7 +17,6 @@ function browsersync() {
         notify: false
     })
 }
-
 
 function styles() {
   return src('app/scss/style.scss')
@@ -61,6 +61,11 @@ function images() {
     .pipe(dest('dist/images'))
 }
 
+function fonts() {
+  return src('app/fonts/**/*.{woff,woff2}')
+    .pipe(dest('dist/fonts'));
+};
+
 
 function build() {
     return src([
@@ -76,11 +81,21 @@ function cleanDist() {
     return del('dist')
 }
 
+const htmlInclude = () => {
+  return src(['app/html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
 
 function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', browserSync.reload);
+    watch(['app/html/**/*.html'], htmlInclude);
 }
 
 
@@ -89,8 +104,9 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.images = images;
-
+exports.htmlInclude = htmlInclude;
+exports.fonts = fonts;
 exports.watching = watching;
 exports.build = series(cleanDist, images, build);
 exports.cleanDist = cleanDist;
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, styles, scripts, browsersync, watching);
